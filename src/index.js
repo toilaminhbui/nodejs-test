@@ -17,6 +17,9 @@ app.use(morgan("combined"))
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "resources", "views"))
 
+app.get("/", () => {
+  res.send("Hallo")
+})
 app.use("/api/post", routerPost)
 app.use("/api/user", routerUser)
 app.use("/api/auth", routerAuth)
